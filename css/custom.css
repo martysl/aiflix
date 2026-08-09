@@ -1,0 +1,107 @@
+/* ============================================================
+   MartyFlix — Jellyfin custom CSS (cute edition 🐭🍿)
+   Paste in: Dashboard → General → Custom CSS → Save
+   ============================================================ */
+
+/* --- 1. Logo swap in the top bar ---------------------------------
+   Jellyfin serves uploaded branding images at /Branding/Logo.png.
+   Upload logo/martyflix_logo.png via Dashboard → Branding → Images.
+   If your Jellyfin is behind a subpath (e.g. /jellyfin), prefix:
+   url('/jellyfin/Branding/Logo.png')
+------------------------------------------------------------------ */
+.headerLogo {
+    background-image: url('/Branding/Logo.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 200px !important;
+    height: 64px !important;
+}
+
+/* --- 2. Cute pastel theme (matches the logo) ------------------- */
+:root {
+    --accent: #a78bfa;          /* soft purple */
+    --accent-dark: #8b5cf6;
+    --background: #0f0f23;      /* deep night purple */
+    --card: #1a1a2e;
+    --text: #e0e0e0;
+    --text-muted: #9ca3af;
+    --radius: 12px;
+}
+
+/* Background gradient — dreamy */
+html,
+body {
+    background: linear-gradient(160deg, #0f0f23 0%, #1e1b4b 55%, #312e81 100%) fixed !important;
+}
+
+/* Cards — soft, rounded */
+.card,
+.cardBox,
+.itemDetailPage .itemName,
+.sectionTitleContainer,
+.paperList,
+.detailPageSecondaryContainer {
+    border-radius: var(--radius) !important;
+}
+
+.card {
+    background: rgba(26, 26, 46, 0.72) !important;
+    backdrop-filter: blur(6px);
+}
+
+/* Accent color everywhere */
+.material-icons,
+.button-flat:hover,
+a:hover,
+.emby-button:hover {
+    color: var(--accent) !important;
+}
+
+.button-submit,
+.button-accent,
+.btnSubmit,
+.appfooter .button-submit {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #fff !important;
+}
+
+/* Selection */
+::selection {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+/* Scrollbar — cute purple */
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: var(--background);
+}
+*::-webkit-scrollbar-thumb {
+    background: var(--accent-dark);
+    border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* --- 3. Login screen logo (optional) --------------------------- */
+.loginPage .loginLogo {
+    background-image: url('/Branding/Logo.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 240px !important;
+    height: 90px !important;
+}
+
+/* --- 4. Cute snackbar / toasts -------------------------------- */
+.toast {
+    background: var(--card) !important;
+    border: 1px solid var(--accent-dark) !important;
+    border-radius: 10px !important;
+}
