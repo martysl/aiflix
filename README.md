@@ -1,29 +1,20 @@
-# 🎬 MartyFlix — Jellyfin Branding
+# 🎬 MartyFlix for Jellyfin
 
-Cute branding assets for Jellyfin, made with Tasia's image generator (ComfyUI + Z-Image).
+A self-contained Jellyfin Web theme starring Marty, the popcorn-loving mouse. **The logo and loading splash are made and applied entirely by `css/custom.css`**—there is no image upload, external URL, or JavaScript dependency.
 
-**MartyFlix** — bo Marty rządzi. 🐭🍿
+## Included
 
-## Contents
-
-```
-├── logo/
-│   └── martyflix_logo.png   ← generated logo (cute mouse + popcorn)
-├── css/
-│   └── custom.css           ← Jellyfin custom CSS (logo swap + cute theme)
-└── jellyfin/
-    └── how-to.md            ← step-by-step install guide
-```
+| Path | Purpose |
+|---|---|
+| `css/custom.css` | MartyFlix logo, splash, responsive dark theme, and accessibility preferences |
+| `js/martyflix.js` | Optional, dependency-free accessibility and welcome-message enhancement |
+| `logo/martyflix_logo.png` | Original artwork/reference; not required by the theme |
+| `jellyfin/how-to.md` | Installation, verification, and troubleshooting guide |
 
 ## Quick start
 
-1. **Logo**: Jellyfin Dashboard → Branding → Images → upload `logo/martyflix_logo.png`
-   (or serve it from `/Branding/Logo.png`).
-2. **CSS**: Jellyfin Dashboard → General → Custom CSS → paste contents of `css/custom.css` → Save.
-3. Refresh the page. Done.
+1. Open **Dashboard → General → Branding**.
+2. Paste the complete contents of `css/custom.css` into **Custom CSS**.
+3. Save, then hard-refresh Jellyfin Web.
 
-See [jellyfin/how-to.md](jellyfin/how-to.md) for details and troubleshooting.
-
----
-
-*Logo generated locally via Tasia proxy → ComfyUI (Z-Image). Repo: tasia-ai/aiflix.*
+That single CSS paste installs the MartyFlix header logo, login logo, startup splash, palette, and component styling. The optional JavaScript is not needed for either image.
