@@ -1,107 +1,200 @@
-/* ============================================================
-   MartyFlix — Jellyfin custom CSS (cute edition 🐭🍿)
-   Paste in: Dashboard → General → Custom CSS → Save
-   ============================================================ */
+/* MartyFlix for Jellyfin Web 10.10+ / 10.11+
+ * Dashboard > General > Branding > Custom CSS
+ * Keep this file CSS-only: optional behaviour lives in js/martyflix.js.
+ */
 
-/* --- 1. Logo swap in the top bar ---------------------------------
-   Jellyfin serves uploaded branding images at /Branding/Logo.png.
-   Upload logo/martyflix_logo.png via Dashboard → Branding → Images.
-   If your Jellyfin is behind a subpath (e.g. /jellyfin), prefix:
-   url('/jellyfin/Branding/Logo.png')
------------------------------------------------------------------- */
-.headerLogo {
-    background-image: url('/Branding/Logo.png') !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    width: 200px !important;
-    height: 64px !important;
-}
-
-/* --- 2. Cute pastel theme (matches the logo) ------------------- */
 :root {
-    --accent: #a78bfa;          /* soft purple */
-    --accent-dark: #8b5cf6;
-    --background: #0f0f23;      /* deep night purple */
-    --card: #1a1a2e;
-    --text: #e0e0e0;
-    --text-muted: #9ca3af;
-    --radius: 12px;
+    --marty-accent: #ff4f70;
+    --marty-accent-hover: #ff7890;
+    --marty-purple: #8b7cf6;
+    --marty-bg: #100d22;
+    --marty-surface: rgba(31, 25, 58, 0.82);
+    --marty-border: rgba(255, 255, 255, 0.1);
+    --marty-radius: 0.85rem;
+    --marty-shadow: 0 0.75rem 2rem rgba(5, 3, 18, 0.32);
+    /* Self-contained SVG: no Branding upload or external request required. */
+    --marty-logo-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMzAwIj48ZyBzdHJva2U9IiMyMTE3NDciIHN0cm9rZS13aWR0aD0iMTQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjE0NiIgY3k9IjkwIiByPSI1OCIgZmlsbD0iI2ZmZjdmYiIvPjxjaXJjbGUgY3g9IjMxNCIgY3k9IjkwIiByPSI1OCIgZmlsbD0iI2ZmZjdmYiIvPjxwYXRoIGQ9Ik0xMTUgMTA1UTExMCAyMTggMjMwIDIyNlEzNTAgMjE4IDM0NSAxMDVRMzA1IDQ4IDIzMCA0OFExNTUgNDggMTE1IDEwNVoiIGZpbGw9IiNmZmY3ZmIiLz48cGF0aCBkPSJNMTU4IDU1UTIzMCAzIDMwMiA1NUwyODYgMTAyUTIzMCAxMjIgMTc0IDEwMloiIGZpbGw9IiNmZjRmNzAiLz48cGF0aCBkPSJNMTcwIDU4UTIyNSAyMSAyODggNTciIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSIxOTAiIGN5PSIxNDIiIHI9IjEzIiBmaWxsPSIjMjExNzQ3IiBzdHJva2U9Im5vbmUiLz48Y2lyY2xlIGN4PSIyNzAiIGN5PSIxNDIiIHI9IjEzIiBmaWxsPSIjMjExNzQ3IiBzdHJva2U9Im5vbmUiLz48cGF0aCBkPSJNMjE4IDE2N1EyMzAgMTgxIDI0MiAxNjciIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xNzQgMjAxUTIzMCAxNzQgMjg2IDIwMUwyNzIgMjYwUTIzMCAyNzcgMTg4IDI2MFoiIGZpbGw9IiNmZjRmNzAiLz48cGF0aCBkPSJNMTkwIDIwMVEyMzAgMTc2IDI3MCAyMDEiIGZpbGw9IiNmZmUyOGEiLz48cGF0aCBkPSJNMTkwIDIwNWwxOC0yMyAyMCAxOSAxOS0yNSAyMyAyOSIgZmlsbD0iI2ZmZjRiZCIgc3Ryb2tlLXdpZHRoPSI4Ii8+PC9nPjx0ZXh0IHg9IjM4NSIgeT0iMTg4IiBmb250LWZhbWlseT0iQXJpYWwgUm91bmRlZCBNVCBCb2xkLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmY3ZmIiIHN0cm9rZT0iIzIxMTc0NyIgc3Ryb2tlLXdpZHRoPSI3IiBwYWludC1vcmRlcj0ic3Ryb2tlIj5NYXJ0eTx0c3BhbiBmaWxsPSIjZmY0ZjcwIj5GbGl4PC90c3Bhbj48L3RleHQ+PHRleHQgeD0iMzkwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBsZXR0ZXItc3BhY2luZz0iNyIgZmlsbD0iI2M3YmZmZiI+TU9WSUUgTklHSFQ8L3RleHQ+PC9zdmc+");
 }
 
-/* Background gradient — dreamy */
-html,
-body {
-    background: linear-gradient(160deg, #0f0f23 0%, #1e1b4b 55%, #312e81 100%) fixed !important;
+html {
+    color-scheme: dark;
+    background-color: var(--marty-bg);
 }
 
-/* Cards — soft, rounded */
-.card,
+body,
+.backgroundContainer,
+.skinHeader-withBackground {
+    background-color: var(--marty-bg) !important;
+}
+
+.backgroundContainer {
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(139, 124, 246, 0.22), transparent 32rem),
+        linear-gradient(145deg, #100d22 0%, #181333 52%, #241846 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Jellyfin renders the uploaded Branding logo inside these current and legacy hooks. */
+.headerLogo,
+.pageTitleWithDefaultLogo,
+.loginLogo {
+    background-image: var(--marty-logo-image) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+
+.headerLogo,
+.pageTitleWithDefaultLogo {
+    width: clamp(8.5rem, 18vw, 12.5rem) !important;
+    min-height: 3rem !important;
+}
+
+.loginLogo {
+    width: min(76vw, 18rem) !important;
+    height: 8rem !important;
+    margin: 0 auto 1rem !important;
+}
+
+/* Initial Jellyfin Web splash. Both current React and legacy hooks are covered. */
+.splashLogo,
+#splashLogo {
+    background: var(--marty-logo-image) center / min(78vw, 40rem) auto no-repeat !important;
+    width: min(90vw, 46rem) !important;
+    height: clamp(10rem, 32vh, 20rem) !important;
+}
+
+.splashLogo img,
+#splashLogo img {
+    visibility: hidden !important;
+}
+
+#splashscreen,
+.splashScreen {
+    background:
+        radial-gradient(circle at 50% 42%, rgba(139, 124, 246, 0.32), transparent 28rem),
+        linear-gradient(145deg, #100d22, #241846) !important;
+}
+
+
+/* Native Jellyfin cards retain their layout, focus handling and image loading. */
 .cardBox,
-.itemDetailPage .itemName,
-.sectionTitleContainer,
 .paperList,
-.detailPageSecondaryContainer {
-    border-radius: var(--radius) !important;
+.visualCardBox,
+.dialog,
+.toast,
+.formDialogHeader,
+.formDialogFooter {
+    border: 1px solid var(--marty-border) !important;
+    border-radius: var(--marty-radius) !important;
+    box-shadow: var(--marty-shadow);
 }
 
-.card {
-    background: rgba(26, 26, 46, 0.72) !important;
-    backdrop-filter: blur(6px);
+.cardBox,
+.paperList,
+.visualCardBox,
+.dialog,
+.toast {
+    background-color: var(--marty-surface) !important;
 }
 
-/* Accent color everywhere */
-.material-icons,
-.button-flat:hover,
-a:hover,
-.emby-button:hover {
-    color: var(--accent) !important;
+.cardImageContainer,
+.cardPadder,
+.cardOverlayContainer {
+    border-radius: calc(var(--marty-radius) - 0.15rem) !important;
 }
 
+.cardBox {
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cardBox:hover,
+.card:focus-visible .cardBox {
+    box-shadow: 0 1rem 2.5rem rgba(5, 3, 18, 0.5);
+    transform: translateY(-0.18rem);
+}
+
+/* Use Jellyfin's semantic button classes rather than recolouring every icon. */
 .button-submit,
 .button-accent,
-.btnSubmit,
-.appfooter .button-submit {
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-    color: #fff !important;
+.raised.button-submit,
+.fab,
+.itemProgressBarForeground,
+.playbackProgress > div {
+    background-color: var(--marty-accent) !important;
 }
 
-/* Selection */
+a,
+.button-link,
+.selectLabelFocused,
+.inputLabelFocused,
+.textareaLabelFocused {
+    color: var(--marty-accent-hover) !important;
+}
+
+.emby-button:focus-visible,
+.emby-input:focus-visible,
+.emby-select:focus-visible,
+.emby-textarea:focus-visible,
+.card:focus-visible {
+    outline: 0.18rem solid var(--marty-accent-hover) !important;
+    outline-offset: 0.15rem !important;
+}
+
 ::selection {
-    background: var(--accent) !important;
-    color: #fff !important;
+    color: #fff;
+    background: var(--marty-accent);
 }
 
-/* Scrollbar — cute purple */
+* {
+    scrollbar-color: var(--marty-purple) var(--marty-bg);
+    scrollbar-width: thin;
+}
+
 *::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 0.65rem;
+    height: 0.65rem;
 }
-*::-webkit-scrollbar-track {
-    background: var(--background);
-}
+
+*::-webkit-scrollbar-track { background: var(--marty-bg); }
 *::-webkit-scrollbar-thumb {
-    background: var(--accent-dark);
-    border-radius: 6px;
-}
-*::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+    background: var(--marty-purple);
+    border: 0.15rem solid var(--marty-bg);
+    border-radius: 999px;
 }
 
-/* --- 3. Login screen logo (optional) --------------------------- */
-.loginPage .loginLogo {
-    background-image: url('/Branding/Logo.png') !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    width: 240px !important;
-    height: 90px !important;
+/* The optional script adds this tiny, non-blocking welcome message. */
+.martyflix-greeting {
+    max-width: 25rem;
+    margin: 0.25rem auto 1.25rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.92rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
-/* --- 4. Cute snackbar / toasts -------------------------------- */
-.toast {
-    background: var(--card) !important;
-    border: 1px solid var(--accent-dark) !important;
-    border-radius: 10px !important;
+@media (max-width: 50em) {
+    .headerLogo,
+    .pageTitleWithDefaultLogo {
+        width: 9rem !important;
+        min-height: 2.5rem !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cardBox {
+        transition: none;
+    }
+
+    .cardBox:hover,
+    .card:focus-visible .cardBox {
+        transform: none;
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --marty-border: rgba(255, 255, 255, 0.45);
+        --marty-surface: #211a3d;
+    }
 }
